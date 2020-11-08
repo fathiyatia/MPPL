@@ -45,7 +45,12 @@ def home(request):
     docs_filter = DocsFilter(request.GET, queryset=documents)
     documents = docs_filter.qs
 
-    context = {'documents':documents, 'docs_filter':docs_filter}
+    # dashboard
+    jumlah = Documents.objects.count()
+    jumlahmasuk = Documents.objects.filter(kategori='Surat Masuk').count()
+    jumlahkeluar = Documents.objects.filter(kategori='Surat Keluar').count()
+    
+    context = {'documents':documents, 'docs_filter':docs_filter, 'jumlah':jumlah, 'jumlahmasuk':jumlahmasuk, 'jumlahkeluar':jumlahkeluar}
 
     return render(request, 'docs/landingpage.html', context)
 

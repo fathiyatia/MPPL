@@ -72,11 +72,9 @@
                 
             </div>            
         </div>
-        <div class="col-12 col-lg-4">
-            <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a href="{{document.uploaded_file.url}}"> Lihat PDF</a></button>
-            <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a href="{% url 'update' document.id %}"> Edit Dokumen</a></button>
-            <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a href="{% url 'delete' document.id %}"> Hapus Dokumen</a></button>
-        </div>            
+            <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a style="color:#FFFFFF;" href="{{document.uploaded_file.url}}"> Lihat PDF</a></button>
+            <button class="btn rehomes-btn mt-15" style="background-color:#5bc0de;color:white;margin:0px 5px 50px 0px;"><a style="color:#FFFFFF;" href="{% url 'update' document.id %}"> Edit Dokumen</a></button>
+            <button class="btn rehomes-btn mt-15" style="background-color:#d9534f;color:white;margin:0px 5px 50px 0px;"><a style="color:#FFFFFF;" href="{% url 'delete' document.id %}"> Hapus Dokumen</a></button>           
     </div>
 </div>
 <!-- **** Properties-area End **** -->
