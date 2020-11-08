@@ -13,13 +13,15 @@
                     <div class="single-agent-area wow fadeInUp" data-wow-delay="200ms">
                         <!-- Agent Info -->
                         <div class="agent-info">
-                            <a href="">Yakin ingin menghapus surat? Acara: Sosialisasi</a>
-                            <form action="" method="">
-			
-                                <a class="btn" style="background-color:#486f3d;color:white;margin:20px 20px 0px;font-size: medium;" href=""> &nbsp; Ya &nbsp; </a>
-                                <a class="btn" style="background-color:#9ea59c;color:white;margin:20px 20px 0px;font-size: medium;" href=""> Tidak </a>
+                            <a href="#">Yakin ingin menghapus surat? Acara: {{document.acara}}</a>
+                            <form action="{% url 'delete' document.id  %}" method="POST">
+				
+                                {% csrf_token %}
+                
+                                <input class="btn btn-danger mt-15" type="submit" name="Confirm">
+                                <a class="btn" style="background-color:#9ea59c;color:white;margin:20px 20px 0px;font-size: medium;" href="{% url 'detail' document.id %}"> Tidak </a>
                             </form>
-                            
+                            <!-- <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a href="{% url 'update' document.id %}"> Iya </a></button> -->
                         </div>
                     </div>
                 </div>    

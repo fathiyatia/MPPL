@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- **** Properties-area Start **** -->
-<div class="rehomes-properties-area">
+<div class="rehomes-properties-area" style="background-color: ;">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-12 col-lg-8">
@@ -13,6 +13,17 @@
 
                     <!--Information Content -->
                     <div class="information-content col-12 col-lg-12">
+                        <!-- <ul class="">
+                            <li><p> Tanggal Terima </p><span>: {{document.tanggal_terima}}</span></li>
+                            <li><p> Kategori </p> <span>: {{document.kategori}}</span></li>
+                            <li><p> Dari / Ke </p> <span>: {{document.dari_atau_ke}}</span></li>
+                            <li><p> No Surat </p> <span>: {{document.no_surat}}</span></li>
+                            <li><p> Tanggal Surat </p> <span>: {{document.tanggal_surat}}</span></li>
+                            <li><p> Hari / Jam </p> <span>: {{document.hari_jam}}</span></li>
+                            <li><p> Tempat </p> <span>: {{document.tempat}}</span></li>
+                            <li><p> Acara </p> <span>: {{document.acara}}</span></li>
+                            <li><p> Keterangan </p> <span>: {{document.keterangan}}</span></li>
+                        </ul> -->
                         <table class="tabel">
                             <thead>
                                 <tr></tr>
@@ -21,39 +32,39 @@
                             </thead>
                             <tr>
                                 <td> Tanggal Terima </td>
-                                <td> <span> : 22 Agustus 2020 </span> </td>
+                                <td> <span> : {{document.tanggal_terima}} </span> </td>
                             </tr>
                             <tr>
                                 <td>Kategori</td>
-                                <td><span> : Surat Masuk </span></td>
+                                <td><span> : {{document.kategori}} </span></td>
                             </tr>
                             <tr>
                                 <td>Dari / Ke </td>
-                                <td> : Posyandu </td>
+                                <td> : {{document.dari_atau_ke}}</td>
                             </tr>
                             <tr>
                                 <td>No Surat </td>
-                                <td> : 009998889991 </td>
+                                <td> : {{document.no_surat}} </td>
                             </tr>
                             <tr>
                                 <td>Tanggal Surat</td>
-                                <td>: 23 Agustus 2020</td>
+                                <td>: {{document.tanggal_surat}}</td>
                             </tr>
                             <tr>
                                 <td>Hari / Jam </td>
-                                <td>: Senin / 10:00 </td>
+                                <td>: {{document.hari_jam}}</td>
                             </tr>
                             <tr>
                                 <td>Tempat</td>
-                                <td>: Jakarta</td>
+                                <td>: {{document.tempat}}</td>
                             </tr>
                             <tr>
-                                <td>Acara</td>
-                                <td>: Sosialisasi</td>
+                                <td>Acrra</td>
+                                <td>: {{document.acara}}</td>
                             </tr>
                             <tr>
                                 <td>Keterangan</td>
-                                <td>: -</td>
+                                <td>: {{document.keterangan}}</td>
                             </tr>
                         </table>
                     </div>
@@ -62,9 +73,9 @@
             </div>            
         </div>
         <div class="col-12 col-lg-4">
-            <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a href=""> Lihat PDF</a></button>
-            <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a href=""> Edit Dokumen</a></button>
-            <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a href=""> Hapus Dokumen</a></button>
+            <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a href="{{document.uploaded_file.url}}"> Lihat PDF</a></button>
+            <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a href="{% url 'update' document.id %}"> Edit Dokumen</a></button>
+            <button class="btn rehomes-btn mt-15" style="background-color:#486f3d;color:white;margin:0px 5px 50px 0px;"><a href="{% url 'delete' document.id %}"> Hapus Dokumen</a></button>
         </div>            
     </div>
 </div>

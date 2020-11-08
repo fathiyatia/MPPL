@@ -3,9 +3,8 @@
 {% block content %}
 
 {% include 'docs/header.html' %}
-<!-- include 'docs/header.html' -->
 
-    <!--**** Sale area Start **** --> 
+    <!-- **** Sale area Start **** -->
     <section class="rehome-house-sale-area section-padding-100-60">
         <div class="container">
             <div class="row">
@@ -16,6 +15,7 @@
                     </div>
                 </div>
                 
+                {% for i in documents %}
                     <!-- Single Property Area -->
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="single-property-area wow fadeInUp" data-wow-delay="200ms" >
@@ -25,161 +25,28 @@
                                 <div class="property-title-seller d-flex justify-content-between">
                                     <!-- Title -->
                                     <div class="property-title">
-                                        <h4>SOSIALISASI POSYANDU</h4>
+                                        <h4>{{i.acara}}</h4>
                                     </div>
                                 </div>
                                 <!-- Property Info -->
                                 <div class="property-info-area flex-wrap">
-                                    <p>Dari / Ke: <span>Posyandu Ciracas</span></p>
-                                    <p>Tanggal Terima: <span>22 Agustus 2020</span></p>
-                                    <p>Tanggal Input: <span>26 Agustus 2020</span></p>
+                                    <p>Dari / Ke: <span>{{i.dari_atau_ke}}</span></p>
+                                    <p>Tanggal Terima: <span>{{i.tanggal_terima}}</span></p>
+                                    <p>Tanggal Input: <span>{{i.date_input.date}}</span></p>
                                 </div>
                             </div>
 
                             <!-- Property Price -->
                             <div class="property-price">
-                                <p class="price"><a href=""> Detail </a></p>
+                                <!-- <p class="badge-rent">For Rent</p> -->
+                                <!-- <p class="price"><a href="/detail/{{i.id}}"> Detail </a></p> -->
+                                <p class="price"><a href="{% url 'detail' i.id %}"> Detail </a></p>
                             </div>
 
                         </div>
                     </div>
+                {% endfor %}
 
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="single-property-area wow fadeInUp" data-wow-delay="200ms" >
-                            <!-- Property Description -->
-                            <div class="property-desc-area">
-                                <!-- Property Title & Seller -->
-                                <div class="property-title-seller d-flex justify-content-between">
-                                    <!-- Title -->
-                                    <div class="property-title">
-                                        <h4>SOSIALISASI POSYANDU</h4>
-                                    </div>
-                                </div>
-                                <!-- Property Info -->
-                                <div class="property-info-area flex-wrap">
-                                    <p>Dari / Ke: <span>Posyandu Ciracas</span></p>
-                                    <p>Tanggal Terima: <span>22 Agustus 2020</span></p>
-                                    <p>Tanggal Input: <span>26 Agustus 2020</span></p>
-                                </div>
-                            </div>
-
-                            <!-- Property Price -->
-                            <div class="property-price">
-                                <p class="price"><a href=""> Detail </a></p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="single-property-area wow fadeInUp" data-wow-delay="200ms" >
-                            <!-- Property Description -->
-                            <div class="property-desc-area">
-                                <!-- Property Title & Seller -->
-                                <div class="property-title-seller d-flex justify-content-between">
-                                    <!-- Title -->
-                                    <div class="property-title">
-                                        <h4>SOSIALISASI POSYANDU</h4>
-                                    </div>
-                                </div>
-                                <!-- Property Info -->
-                                <div class="property-info-area flex-wrap">
-                                    <p>Dari / Ke: <span>Posyandu Ciracas</span></p>
-                                    <p>Tanggal Terima: <span>22 Agustus 2020</span></p>
-                                    <p>Tanggal Input: <span>26 Agustus 2020</span></p>
-                                </div>
-                            </div>
-
-                            <!-- Property Price -->
-                            <div class="property-price">
-                                <p class="price"><a href=""> Detail </a></p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="single-property-area wow fadeInUp" data-wow-delay="200ms" >
-                            <!-- Property Description -->
-                            <div class="property-desc-area">
-                                <!-- Property Title & Seller -->
-                                <div class="property-title-seller d-flex justify-content-between">
-                                    <!-- Title -->
-                                    <div class="property-title">
-                                        <h4>SOSIALISASI POSYANDU</h4>
-                                    </div>
-                                </div>
-                                <!-- Property Info -->
-                                <div class="property-info-area flex-wrap">
-                                    <p>Dari / Ke: <span>Posyandu Ciracas</span></p>
-                                    <p>Tanggal Terima: <span>22 Agustus 2020</span></p>
-                                    <p>Tanggal Input: <span>26 Agustus 2020</span></p>
-                                </div>
-                            </div>
-
-                            <!-- Property Price -->
-                            <div class="property-price">
-                                <p class="price"><a href=""> Detail </a></p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="single-property-area wow fadeInUp" data-wow-delay="200ms" >
-                            <!-- Property Description -->
-                            <div class="property-desc-area">
-                                <!-- Property Title & Seller -->
-                                <div class="property-title-seller d-flex justify-content-between">
-                                    <!-- Title -->
-                                    <div class="property-title">
-                                        <h4>SOSIALISASI POSYANDU</h4>
-                                    </div>
-                                </div>
-                                <!-- Property Info -->
-                                <div class="property-info-area flex-wrap">
-                                    <p>Dari / Ke: <span>Posyandu Ciracas</span></p>
-                                    <p>Tanggal Terima: <span>22 Agustus 2020</span></p>
-                                    <p>Tanggal Input: <span>26 Agustus 2020</span></p>
-                                </div>
-                            </div>
-
-                            <!-- Property Price -->
-                            <div class="property-price">
-                                <p class="price"><a href=""> Detail </a></p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="single-property-area wow fadeInUp" data-wow-delay="200ms" >
-                            <!-- Property Description -->
-                            <div class="property-desc-area">
-                                <!-- Property Title & Seller -->
-                                <div class="property-title-seller d-flex justify-content-between">
-                                    <!-- Title -->
-                                    <div class="property-title">
-                                        <h4>SOSIALISASI POSYANDU</h4>
-                                    </div>
-                                </div>
-                                <!-- Property Info -->
-                                <div class="property-info-area flex-wrap">
-                                    <p>Dari / Ke: <span>Posyandu Ciracas</span></p>
-                                    <p>Tanggal Terima: <span>22 Agustus 2020</span></p>
-                                    <p>Tanggal Input: <span>26 Agustus 2020</span></p>
-                                </div>
-                            </div>
-
-                            <!-- Property Price -->
-                            <div class="property-price">
-                                <p class="price"><a href=""> Detail </a></p>
-                            </div>
-
-                        </div>
-                    </div>
-                
             </div>
         </div>
     </section>
