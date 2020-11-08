@@ -1,17 +1,32 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.template import loader 
 from .models import *
 from .forms import DocsForms
+from .filters import DocsFilter
 
 # Create your views here.
 
 def home(request):
     documents = Documents.objects.order_by('-date_input').all()[:9]
 
-    context = {'documents':documents}
+    # filtering
+    docs_filter = DocsFilter(request.GET, queryset=documents)
+    documents = docs_filter.qs
+
+    context = {'documents':documents, 'docs_filter':docs_filter}
 
     return render(request, 'docs/landingpage.html', context)
+
+def search(request):
+    documents = Documents.objects.all()
+
+    # filtering
+    docs_filter = DocsFilter(request.GET, queryset=documents)
+    documents = docs_filter.qs
+
+    context = {'documents':documents, 'docs_filter':docs_filter}
+
+    return render(request, 'docs/searchPage.html', context)
 
 def input(request):
     form = DocsForms()
