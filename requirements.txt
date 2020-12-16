@@ -18,7 +18,7 @@ dj-database-url==0.5.0
 Django==3.0.8
 django-cors-headers==3.6.0
 django-filter==2.3.0
-django-mysql==3.7.1
+# django-mysql==3.7.1
 entrypoints==0.3
 filelock==3.0.12
 gunicorn==20.0.4
@@ -39,7 +39,7 @@ Keras==2.4.3
 MarkupSafe==1.1.1
 mistune==0.8.4
 more-itertools==8.5.0
-mysqlclient @ file:///C:/projek/django/mysqlclient-1.4.6-cp38-cp38-win32.whl
+# mysqlclient @ file:///C:/projek/django/mysqlclient-1.4.6-cp38-cp38-win32.whl
 nbclient==0.5.0
 nbconvert==6.0.6
 nbformat==5.0.7
