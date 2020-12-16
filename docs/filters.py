@@ -1,5 +1,5 @@
-import django_filter
-from django_filter import DateFilter, CharFilter
+import django_filters
+from django_filters import DateFilter, CharFilter
 from .models import *
 
 class DocsFilter(django_filters.FilterSet):
