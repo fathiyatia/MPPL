@@ -4,3 +4,6 @@ venv/
 
 .docs/
 documents/
+
+webkec/
+settings.py

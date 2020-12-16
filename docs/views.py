@@ -40,17 +40,7 @@ def logoutUser(request):
 @login_required(login_url='login')
 def home(request):
     documents = Documents.objects.order_by('-date_input').all()[:9]
-
-    # filtering
-    docs_filter = DocsFilter(request.GET, queryset=documents)
-    documents = docs_filter.qs
-
-    # dashboard
-    jumlah = Documents.objects.count()
-    jumlahmasuk = Documents.objects.filter(kategori='Surat Masuk').count()
-    jumlahkeluar = Documents.objects.filter(kategori='Surat Keluar').count()
-    
-    context = {'documents':documents, 'docs_filter':docs_filter, 'jumlah':jumlah, 'jumlahmasuk':jumlahmasuk, 'jumlahkeluar':jumlahkeluar}
+    context = {'documents':documents}
 
     return render(request, 'docs/landingpage.html', context)
 
