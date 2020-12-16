@@ -1,1 +1,1 @@
-web: gunicorn webkec.wsgi --log-file-
+web: gunicorn webkec.wsgi --log-file -
