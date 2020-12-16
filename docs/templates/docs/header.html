@@ -1,24 +1,76 @@
 {% load static %}
 
-<!-- **** Welcome Maps Area Start **** -->
-<div class="welcome-area wow fadeInUp" data-wow-delay="200ms">
-    <div class="google-maps">
-        <img src="{% static 'docs/img/bg-img/10e.jpg' %}" style="height: 100%;width:100%; object-fit:contain;">
-    </div>
-</div>
-<!-- **** Welcome Maps Area End **** -->
 
-<!-- **** Location Search Form Area **** -->
-<div class="rehomes-search-form-area wow fadeInUp" data-wow-delay="200ms">
-    <div class="container">
-        <div class="rehomes-search-form">
-            <form action="#" method="get">
-                <div class="row">
-                    <div class="col-12 col-lg-10">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+ <!-- **** Breadcrumb Area Start **** -->
+ <div class="breadcrumb-area bg-img bg-overlay-4 wow fadeInUp" data-wow-delay="200ms" style="background-image: url({% static 'docs/img/bg-img/10e.jpg' %}); height: 45%; width:100%;">
+  <div class="container h-100">
+      <div class="row h-100 align-items-center">
+          <div class="col-12">
+              <div class="breadcrumb-content">
+                  <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="index.html">Selamat Datang,</a></li>
+                      </ol>
+                  </nav>
+                  <h2 class="page-title">Website Arsip Surat</h2>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
-<!-- **** Location Search Form Area **** -->
+
+<!-- **** Breadcrumb Area End **** -->
+<!-- Small boxes (Stat box) -->
+<br>
+<br>
+
+<div class="container">
+      <div class="row center">
+                <div class="col-lg-3 col-xs-6">
+                  <!-- small box -->
+                  <div class="small-box bg-aqua">
+                    <div class="inner">
+                      <h3>{{jumlah}}</h3>
+
+                      <p style="color:#FFFFFF;">Total Surat</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fa fa-book"></i>
+                    </div>
+                    <a class="small-box-footer">&nbsp; </a>
+                  </div>
+                </div>
+        <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                  <!-- small box -->
+                  <div class="small-box bg-green">
+                    <div class="inner">
+                      <h3>{{jumlahmasuk}}</h3>
+
+                      <p style="color:#FFFFFF;">Surat Masuk</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fa fa-reply"></i>
+                    </div>
+                    <a class="small-box-footer">&nbsp; </a>
+                  </div>
+                </div>
+        <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                  <!-- small box -->
+                  <div class="small-box bg-yellow">
+                    <div class="inner">
+                      <h3>{{jumlahkeluar}}</h3>
+
+                      <p style="color:#FFFFFF;">Surat Keluar</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fa fa-reply"></i>
+                    </div>
+                    <a class="small-box-footer">&nbsp; </a>
+                  </div>
+                </div>
+        <!-- ./col -->
+      </div> 
+</div>
+<!-- ./wrapper -->
