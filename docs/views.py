@@ -69,7 +69,7 @@ def input(request):
             return redirect('/')
 
     context = {'form':form}
-    return render(request, 'docs/FormInput.html', context)
+    return render(request, 'docs/formInput.html', context)
 
 #  update/edit document 
 @login_required(login_url='login')
